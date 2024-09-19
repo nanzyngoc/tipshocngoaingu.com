@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Học Ngoại Ngữ</title>
+    <style>
+        body {
+            background-color: #ADD8E6; /* Màu xanh dương nhạt */
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #005f73;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #023047;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Confetti effect */
+        .confetti {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Tip Học Ngoại Ngữ</h1>
+        <p>Chào mừng bạn đến với www.tipshocngoaingu.com</p>
+    </header>
+
+    <nav>
+        <div class="dropdown">
+            <a href="#home">HOME</a>
+            <div class="dropdown-content">
+                <a href="#home1">Home 1</a>
+                <a href="#home2">Home 2</a>
+                <a href="#home3">Home 3</a>
+                <a href="#home4">Home 4</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#blog">BLOG</a>
+            <div class="dropdown-content">
+                <a href="#blog1">Blog 1</a>
+                <a href="#blog2">Blog 2</a>
+                <a href="#blog3">Blog 3</a>
+                <a href="#blog4">Blog 4</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#youtube">YOUTUBE</a>
+            <div class="dropdown-content">
+                <a href="#youtube1">Youtube 1</a>
+                <a href="#youtube2">Youtube 2</a>
+                <a href="#youtube3">Youtube 3</a>
+                <a href="#youtube4">Youtube 4</a>
+            </div>
+        </div>
+    </nav>
+
+    <section>
+        <h2>Chào mừng bạn đến với trang web học ngoại ngữ</h2>
+        <p>Nơi chia sẻ các mẹo học ngoại ngữ hiệu quả và các bài viết thú vị về ngôn ngữ.</p>
+    </section>
+
+    <script>
+        // Tạo hiệu ứng pháo giấy rơi
+        function createConfetti() {
+            const confetti = document.createElement('div');
+            confetti.classList.add('confetti');
+            confetti.style.backgroundColor = randomColor();
+            confetti.style.left = `${Math.random() * 100}vw`;
+            confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            document.body.appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
+
+        function randomColor() {
+            const colors = ['#FF6347', '#FFD700', '#ADFF2F', '#87CEFA', '#FF69B4'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        setInterval(createConfetti, 300);
+    </script>
+
+</body>
+</html>
